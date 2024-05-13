@@ -6,11 +6,14 @@ all code that I learn in advanced flutter
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-- provider
+--flex_color_scheme (THEME)
+--google_fonts
+- - remixicon
+--cached_network_image
+--hive
+--dio
+--get_it
+--bloc
+--crystal_navigation_bar
+--liquid_pull_to_refresh
