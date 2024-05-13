@@ -1,6 +1,9 @@
 import 'package:advanced_flutter/features/chaching_data/core/utils/custom_image_viewer.dart';
 import 'package:advanced_flutter/features/chaching_data/features/home/data/model/products.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 
 class HomeSingeListItem extends StatelessWidget {
@@ -54,60 +57,65 @@ class HomeSingeListItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        current.name,
-                        style: theme.textTheme.titleLarge,
-                      ),
-                      SizedBox(
-                        height: 1,
-                      ),
-                      Text(
-                        current.description,
-                        style: theme.textTheme.labelLarge
-                            ?.copyWith(color: theme.unselectedWidgetColor),
-                        maxLines: 3,
-                      ),
-                      SizedBox(
-                        height: 9,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(right: width * .03),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Created ',
-                              style: theme.textTheme.labelMedium,
-                            ),
-                            Text(
-                              createdAt,
-                              style: theme.textTheme.labelLarge,
-                            ),
-                          ],
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          current.name,
+                          style: theme.textTheme.titleLarge,
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(right: width * .03),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Last Update ',
-                              style: theme.textTheme.labelMedium,
-                            ),
-                            Text(
-                              updatedAt,
-                              style: theme.textTheme.labelLarge,
-                            ),
-                          ],
+                        const SizedBox(
+                          height: 1,
                         ),
-                      ),
-                    ],
+                        Text(
+                          current.description,
+                          overflow: TextOverflow.ellipsis,
+                          style: theme.textTheme.labelLarge
+                              ?.copyWith(color: theme.unselectedWidgetColor),
+                          maxLines: 2,
+                        ),
+                        const SizedBox(
+                          height: 2,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: width * .03),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Created ',
+                                style: theme.textTheme.labelMedium,
+                              ),
+                              Text(
+                                createdAt,
+                                style: theme.textTheme.labelLarge,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: width * .03),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Last Update ',
+                                overflow: TextOverflow.ellipsis,
+                                style: theme.textTheme.labelMedium,
+                              ),
+                              Text(
+                                updatedAt,
+                                overflow: TextOverflow.ellipsis,
+                                style: theme.textTheme.labelLarge,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(right: width * .03),
@@ -123,6 +131,7 @@ class HomeSingeListItem extends StatelessWidget {
                                 horizontal: 10, vertical: 2),
                             child: Text(
                               current.category.toUpperCase(),
+                              overflow: TextOverflow.ellipsis,
                               style: theme.textTheme.labelLarge!.copyWith(
                                 color: Colors.white,
                               ),
@@ -130,7 +139,7 @@ class HomeSingeListItem extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "\$" + current.price.toString(),
+                          "\$${current.price}",
                           style: theme.textTheme.labelLarge,
                         ),
                       ],
