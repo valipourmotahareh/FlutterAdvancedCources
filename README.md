@@ -1,19 +1,17 @@
-# advanced_flutter
+# Flutter Advanced Courses
 
-all code that I learn in advanced flutter
+This repository contains a collection of Flutter samples and exercises
+created while exploring advanced Flutter concepts.
 
-## Getting Started
+## Topics Covered
+- State management patterns
+- Advanced UI composition
+- Navigation and routing
+- Clean code practices
+- Performance considerations
 
-This project is a starting point for a Flutter application.
+## Purpose
+Learning, experimentation, and reference.
 
--- provider
---flex_color_scheme (THEME)
---google_fonts
-- - remixicon
---cached_network_image
---hive
---dio
---get_it
---bloc
---crystal_navigation_bar
---liquid_pull_to_refresh
+## Status
+Ongoing
